@@ -4,6 +4,6 @@ export function getGenres() {
   return http.get("/api/genres");
 }
 
-export function getGenres() {
+export function addGenre() {
      return http.post("/api/genres", movie);
 }
