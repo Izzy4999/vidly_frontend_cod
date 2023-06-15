@@ -34,7 +34,6 @@ const AddGenre = (props) => {
 
     try {
       await addGenre(data.genre);
-      window.location = state ? state.from.pathname : "/";
     } catch (err) {
       if (err.response && err.response.status === 400) {
         const errors = { ...error };
