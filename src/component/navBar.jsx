@@ -29,8 +29,8 @@ const NavBar = ({ user }) => {
 
           <div className="nav-item">
             {" "}
-            <NavLink className="nav-link" to="/customers">
-              Customers
+            <NavLink className="nav-link" to="/genre">
+              Add Genres
             </NavLink>
           </div>
 
