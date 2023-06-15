@@ -78,7 +78,7 @@ const LoginForm = (props) => {
           value={data.email}
           label="Email"
           onChange={handleChange}
-          error={error.username}
+          error={error.email}
           focus={true}
         />
         <Input
