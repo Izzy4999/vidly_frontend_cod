@@ -36,7 +36,7 @@ function App() {
             <Route path="movies/:id" element={<MovieForm />} />
           </Route>
 
-          <Route path="customers" element={<AddGenre />} />
+          <Route path="genre" element={<AddGenre />} />
           <Route path="rentals" element={<Rentals />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
