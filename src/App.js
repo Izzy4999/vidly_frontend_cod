@@ -1,7 +1,7 @@
 import Movies from "../src/component/movies.jsx";
 import NavBar from "./component/navBar.jsx";
 import { Route, Routes } from "react-router-dom";
-import Customer from "./component/customers";
+import AddGenre from "./component/customers";
 import Rentals from "./component/rentals";
 import MovieForm from "./component/moviesForm";
 import NotFound from "./component/notFound";
@@ -36,7 +36,7 @@ function App() {
             <Route path="movies/:id" element={<MovieForm />} />
           </Route>
 
-          <Route path="customers" element={<Customer />} />
+          <Route path="customers" element={<AddGenre />} />
           <Route path="rentals" element={<Rentals />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
