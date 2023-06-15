@@ -5,5 +5,6 @@ export function getGenres() {
 }
 
 export function addGenre(genre) {
+  console.log(genre)
      return http.post("/api/genres", genre);
 }
