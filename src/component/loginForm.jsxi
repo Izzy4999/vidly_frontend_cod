@@ -6,10 +6,10 @@ import { useLocation, Navigate } from "react-router-dom";
 
 const LoginForm = (props) => {
   //   const username = React.createRef();
-  const [data, setData] = useState({ username: "", password: "" });
+  const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState({});
   const schema = {
-    username: Joi.string().required().label("Username"),
+    email: Joi.string().required().label("Email"),
     password: Joi.string().required().label("Password"),
   };
 
@@ -34,7 +34,7 @@ const LoginForm = (props) => {
     if (errors) return;
 
     try {
-      await login(data.username, data.password);
+      await login(data.email, data.password);
       window.location = state ? state.from.pathname : "/";
     } catch (err) {
       if (err.response && err.response.status === 400) {
@@ -45,7 +45,6 @@ const LoginForm = (props) => {
       }
     }
 
-    // const user = username.current.value; using ref
   };
   const validateProperty = ({ name, value }) => {
     const obj = { [name]: value };
@@ -75,9 +74,9 @@ const LoginForm = (props) => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <Input
-          name="username"
-          value={data.username}
-          label="Username"
+          name="email"
+          value={data.email}
+          label="Email"
           onChange={handleChange}
           error={error.username}
           focus={true}
