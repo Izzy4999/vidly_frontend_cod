@@ -3,7 +3,7 @@ import Joi from "joi-browser";
 import Input from "./common/input";
 import { getCurrentUser } from "../services/loginService";
 import { useLocation, Navigate } from "react-router-dom";
-import {addGenre} from "../services/genreServices
+import {addGenre} from "../services/genreServices"
 
 const AddGenre = (props) => {
   //   const username = React.createRef();
