@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Joi from "joi-browser";
 import Input from "./common/input";
+import { toast } from "react-toastify";
 import { getCurrentUser } from "../services/loginService";
 import { useLocation, Navigate } from "react-router-dom";
 import {addGenre} from "../services/genreServices"
@@ -34,11 +35,12 @@ const AddGenre = (props) => {
 
     try {
       await addGenre(data.genre);
+      toast.success("Added successfully")
     } catch (err) {
       if (err.response && err.response.status === 400) {
         const errors = { ...error };
-        errors.username = err.response.data;
-
+        errors.genre = err.response.data;
+      
         setError(errors);
       }
     }
