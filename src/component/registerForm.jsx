@@ -6,11 +6,11 @@ import { loginwithjwt } from "../services/loginService";
 
 const RegisterForm = (props) => {
   //   const username = React.createRef();
-  const [data, setData] = useState({ username: "", password: "", name: "" });
+  const [data, setData] = useState({ email: "", password: "", name: "" });
   const [error, setError] = useState({});
 
   const schema = {
-    username: Joi.string().required().label("Username"),
+    email: Joi.string().required().label("Email"),
     password: Joi.string().required().label("Password"),
     name: Joi.string().required().label("name"),
   };
@@ -35,7 +35,7 @@ const RegisterForm = (props) => {
     if (errors) return;
 
     try {
-      const response = await register(data.username, data.password, data.name);
+      const response = await register(data.email, data.password, data.name);
       loginwithjwt(response.headers["x-auth-token"]);
       window.location = "/";
     } catch (err) {
@@ -76,9 +76,9 @@ const RegisterForm = (props) => {
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <Input
-          name="username"
+          name="email"
           value={data.username}
-          label="Username"
+          label="Email"
           onChange={handleChange}
           error={error.username}
           focus={true}
