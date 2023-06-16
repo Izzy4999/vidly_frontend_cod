@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { logout } from "../services/loginService";
 
 const NavBar = ({ user }) => {
   return (
@@ -64,10 +65,11 @@ const NavBar = ({ user }) => {
                 </NavLink>
               </div>
 
-              <div className="nav-item">
-                <NavLink className="nav-link" to="/logout">
+              <div className="nav-item" onClick={()=>{
+                logout()
+                window.location = "/";
+              }}>
                   Logout
-                </NavLink>
               </div>
             </>
           )}
