@@ -69,7 +69,9 @@ const NavBar = ({ user }) => {
                 logout()
                 window.location = "/";
               }}>
+               <NavLink className="nav-link" to="/">
                   Logout
+ </NavLink>
               </div>
             </>
           )}
