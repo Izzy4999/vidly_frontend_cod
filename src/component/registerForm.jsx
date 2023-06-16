@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Joi from "joi-browser";
 import Input from "./common/input";
+import {toast} from "react-toastify"
 import { register } from "../services/userServices";
 import { loginwithjwt } from "../services/loginService";
 
@@ -36,6 +37,7 @@ const RegisterForm = (props) => {
 
     try {
       const response = await register(data.email, data.password, data.name);
+      toast.success("User created successfully, logging in")
       loginwithjwt(response.headers["x-auth-token"]);
       window.location = "/";
     } catch (err) {
