@@ -41,7 +41,7 @@ const RegisterForm = (props) => {
     } catch (err) {
       if (err.response && err.response.status === 400) {
         const errors = { ...error };
-        errors.username = err.response.data;
+        errors.email = err.response.data;
 
         setError(errors);
       }
@@ -77,10 +77,10 @@ const RegisterForm = (props) => {
       <form onSubmit={handleSubmit}>
         <Input
           name="email"
-          value={data.username}
+          value={data.email}
           label="Email"
           onChange={handleChange}
-          error={error.username}
+          error={error.email}
           focus={true}
         />
         <Input
